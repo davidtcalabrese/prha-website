@@ -1,9 +1,3 @@
-/*
-	ZeroFour by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -65,3 +59,11 @@
 				});
 
 })(jQuery);
+
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('#nav a');
+  navLinks.forEach(link => {	
+    if (link.getAttribute('href') === currentPath) {
+      link.parentElement.classList.add('active');
+    }
+  });

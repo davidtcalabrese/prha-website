@@ -368,7 +368,6 @@ table {
 }
 
 /* Section/Article */
-
 section,
 article {
   margin-bottom: 5em;
@@ -807,6 +806,12 @@ ol.default li {
 }
 
 /* Nav */
+.dropdown-icon::after {
+  content: "▼";
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
 #nav {
   position: absolute;
   right: 2em;
@@ -832,11 +837,16 @@ ol.default li {
   outline: 0;
 }
 
+/* Active link styling */
+li.active {
+  background-color: #262626;
+}
+
 #nav > ul > li.active > a,
 #nav > ul > li.current_page_item > a,
 #nav > ul > li.active > span,
 #nav > ul > li.current_page_item > span {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(34, 34, 34, 0.15);
   box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.025),
     1px 1px 0px 0px rgba(255, 255, 255, 0.025);
 }
