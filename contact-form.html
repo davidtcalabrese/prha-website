@@ -76,31 +76,27 @@
 
 							<article>
 								<h2>Contact Us</h2>
-
-								<form style="width: 26rem;" action="https://formspree.io/f/mldejbpp" method="POST">
-									<!-- Name input -->
+								<form style="width: 26rem;" action="https://t93zxwqggc.execute-api.us-east-1.amazonaws.com/Stage1/submit" method="POST" id="contact-form">
 									<div data-mdb-input-init class="form-outline mb-4">
-										<input type="text" id="form4Example1" class="form-control" />
+										<input type="text" id="form4Example1" name="name" class="form-control" required />
 										<label class="form-label" for="form4Example1">Name</label>
 									</div>
-
-									<!-- Email input -->
+								
 									<div data-mdb-input-init class="form-outline mb-4">
-										<input type="email" name="email" id="form4Example2" class="form-control" />
+										<input type="email" name="email" id="form4Example2" class="form-control" required />
 										<label class="form-label" for="form4Example2">Email address</label>
 									</div>
-
-									<!-- Message input -->
+								
 									<div data-mdb-input-init class="form-outline mb-4">
-										<textarea class="form-control" name="message" id="form4Example3" rows="4"></textarea>
+										<textarea class="form-control" name="message" id="form4Example3" rows="4" required></textarea>
 										<label class="form-label" for="form4Example3">Message</label>
 									</div>
-
-									<!-- Submit button -->
-									<button data-mdb-ripple-init type="submit"
-										class="btn btn-primary btn-block mb-4">Send</button>
+								
+									<button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Send</button>
 								</form>
 							</article>
+
+							<div id="form-message"></div>
 
 						</div>
 					</div>
@@ -130,6 +126,41 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', async function (event) {
+        event.preventDefault(); 
+
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries()); 
+        const messageElement = document.getElementById('form-message');
+
+	
+        try {
+            const response = await fetch(event.target.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+		
+
+            if (response.status === 200) {
+				messageElement.textContent = 'Your message was sent successfully!';
+				messageElement.style.color = 'green';
+                event.target.reset(); 
+            } else {
+                const error = await response.json();
+				messageElement.textContent = error.message || 'Failed to send the message.';
+                messageElement.style.color = 'red';
+            }
+        } catch (err) {
+			messageElement.textContent = 'An unexpected error occurred. Please try again later.';
+            messageElement.style.color = 'red';
+        }
+    });
+</script>
 
 </body>
 
