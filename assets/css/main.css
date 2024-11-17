@@ -435,6 +435,10 @@ header.major p {
 }
 
 /* Forms */
+#form-message {
+	font-size: 1.25rem;
+}
+
 form label {
   display: block;
   text-transform: uppercase;
