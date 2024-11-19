@@ -1,5 +1,9 @@
 @import url("fontawesome-all.min.css");
 
+:root {
+  --nav-panel-width: 200px;
+}
+
 html,
 body,
 div,
@@ -556,7 +560,6 @@ button,
   border-radius: 8px;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.35);
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
   color: #fff !important;
   text-decoration: none;
   text-transform: uppercase;
@@ -828,9 +831,13 @@ ol.default li {
   padding: 0 0.8em 0 0.8em;
 }
 
+#nav > ul > li:last-child {
+  padding-right: 0;
+}
+
 #nav > ul > li > a,
 #nav > ul > li > span {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 800;
@@ -843,16 +850,11 @@ ol.default li {
 
 /* Active link styling */
 li.active {
-  background-color: #262626;
+  background-color: #b0dcf6;
 }
 
-#nav > ul > li.active > a,
-#nav > ul > li.current_page_item > a,
-#nav > ul > li.active > span,
-#nav > ul > li.current_page_item > span {
-  background: rgba(34, 34, 34, 0.15);
-  box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.025),
-    1px 1px 0px 0px rgba(255, 255, 255, 0.025);
+#nav > ul > li > ul > li {
+  padding: 0.5rem;
 }
 
 #nav > ul > li:last-child {
@@ -860,6 +862,22 @@ li.active {
 }
 
 #nav > ul > li > ul {
+  display: none;
+}
+
+#nav-logo-wrapper {
+  height: 100%;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#nav-logo {
+  width: 50px;
+}
+
+#logo {
   display: none;
 }
 
@@ -894,8 +912,6 @@ li.active {
 #bottom-nav > ul > li.active > span,
 #bottom-nav > ul > li.current_page_item > span {
   background: rgba(0, 0, 0, 0.15);
-  box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.025),
-    1px 1px 0px 0px rgba(255, 255, 255, 0.025);
 }
 
 #bottom-nav > ul > li:last-child {
@@ -903,26 +919,8 @@ li.active {
 }
 
 .dropotron {
-  background: linear-gradient(
-    195deg,
-    #000000,
-    #010201,
-    #020303,
-    #020605,
-    #020908,
-    #020c0a,
-    #010f0d,
-    #001310
-  );
-  background-color: #3b3e45;
-  background-color: rgba(59, 62, 69, 0.9);
+  background-color: rgb(255, 255, 255);
   border-radius: 8px;
-  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5),
-    inset 0px 0px 0px 2px rgba(255, 255, 255, 0.075),
-    inset 0px 2px 1px 0px rgba(255, 255, 255, 0.2),
-    0px 2px 14px 0px rgba(0, 0, 0, 0.4);
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
-  padding: 1.5em;
   line-height: 2.5em;
   min-width: 15em;
 }
@@ -931,14 +929,11 @@ li.active {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin-top: -2px;
-  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5),
-    inset 0px 0px 0px 2px rgba(255, 255, 255, 0.075),
-    0px 2px 14px 0px rgba(0, 0, 0, 0.4);
 }
 
 .dropotron a,
 .dropotron span {
-  color: #aaa;
+  color: #000000;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 800;
@@ -949,7 +944,7 @@ li.active {
 
 .dropotron li:hover > a,
 .dropotron li:hover > span {
-  color: #fff;
+  color: #00638a;
 }
 
 /* Banner */
@@ -1035,7 +1030,6 @@ li.active {
 #header-wrapper {
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-
   padding: 1rem 0;
 }
 
@@ -1061,9 +1055,7 @@ li.active {
 
 .wrapper.style1 {
   position: relative;
-  text-shadow: 1px 1px 0 #fff;
   background-color: #fff;
-
   background-repeat: no-repeat, no-repeat, repeat;
   background-size: 100% 15em, 100% 15em, auto auto;
   background-position: top center, bottom center, top left;
@@ -1071,7 +1063,6 @@ li.active {
 
 .wrapper.style3 {
   position: relative;
-  text-shadow: 1px 1px 0 #fff;
   background-color: #fff;
   background-repeat: no-repeat, repeat;
   background-size: 100% 15em, auto auto;
@@ -1091,24 +1082,13 @@ li.active {
 }
 
 #header .inner {
-  background: linear-gradient(
-    195deg,
-    #000000,
-    #010201,
-    #020303,
-    #020605,
-    #020908,
-    #020c0a,
-    #010f0d,
-    #001310
-  );
+  background-color: #fff;
+  padding: 1rem;
   position: relative;
   height: 5.5em;
-  background-color: rgba(59, 62, 69, 0.9);
   border-radius: 8px;
-  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.45),
+  box-shadow: inset 0px 0px 0px 1px rgba(247, 247, 247, 0.45),
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.15);
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
 }
 
 #header h1 {
@@ -1127,20 +1107,8 @@ li.active {
 
 #footer {
   margin-bottom: 0;
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 2;
-}
-
-#nav-logo-wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-#nav-logo {
-  width: 50px;
 }
 
 /* Large */
@@ -1149,9 +1117,10 @@ li.active {
 
   body {
     line-height: 1.75em;
+  }
+  #main-wrapper {
     font-size: 10.75pt;
   }
-
   input,
   select,
   textarea {
@@ -1238,25 +1207,14 @@ li.active {
     -webkit-transition: -webkit-transform 0.5s ease;
     -ms-transition: -ms-transform 0.5s ease;
     transition: transform 0.5s ease;
-    background: linear-gradient(
-      195deg,
-      #000000,
-      #010201,
-      #020303,
-      #020605,
-      #020908,
-      #020c0a,
-      #010f0d,
-      #001310
-    );
-    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5),
+    background-color: #ffffff;
+    box-shadow: inset 0px 0px 0px 1px rgba(161, 161, 161, 0.5),
       inset 0px 0px 0px 2px rgba(255, 255, 255, 0.075),
-      0px 1px 6px 0px rgba(0, 0, 0, 0.35);
+      0px 1px 6px 0px rgba(91, 85, 85, 0.35);
     display: block;
     height: 44px;
     left: 0;
     position: fixed;
-    text-shadow: -1px -1px 0 black;
     top: 0;
     width: 100%;
     z-index: 10001;
@@ -1267,7 +1225,7 @@ li.active {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.04em;
-    color: #fff;
+    color: #000000;
     line-height: 44px;
     text-align: center;
   }
@@ -1279,7 +1237,7 @@ li.active {
     top: 0;
     width: 60px;
     height: 44px;
-    opacity: 0.25;
+    opacity: 0.65;
   }
 
   #titleBar .toggle:before {
@@ -1303,12 +1261,12 @@ li.active {
     height: 44px;
     line-height: 44px;
     text-align: center;
-    color: #fff;
+    color: #000000;
     content: "\f0c9";
   }
 
   #titleBar .toggle:active {
-    opacity: 0.5;
+    opacity: 0.75;
   }
 
   #navPanel {
@@ -1316,42 +1274,32 @@ li.active {
     -webkit-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
-    background: linear-gradient(
-      195deg,
-      #000000,
-      #010201,
-      #020303,
-      #020605,
-      #020908,
-      #020c0a,
-      #010f0d,
-      #001310
-    );
-    -moz-transform: translateX(-275px);
-    -webkit-transform: translateX(-275px);
-    -ms-transform: translateX(-275px);
-    transform: translateX(-275px);
+    background-color: #ffffff;
+
+    -moz-transform: translateX(-200px);
+    -webkit-transform: translateX(-200px);
+    -ms-transform: translateX(-200px);
+    transform: translateX(-200px);
     -moz-transition: -moz-transform 0.5s ease;
     -webkit-transition: -webkit-transform 0.5s ease;
     -ms-transition: -ms-transform 0.5s ease;
     transition: transform 0.5s ease;
-    background-color: #303238;
-    box-shadow: inset -1px 0px 0px 0px rgba(0, 0, 0, 0.5),
-      inset -2px 0px 0px rgba(255, 255, 255, 0.15),
-      inset -2px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: inset -1px 0px 0px 0px rgba(224, 224, 224, 0.5),
+      inset -2px 0px 0px rgba(241, 239, 239, 0.15),
+      inset -2px 0px 10px 0px rgba(235, 234, 234, 0.35);
     display: block;
     height: 100%;
     left: 0;
     overflow-y: auto;
     position: fixed;
     top: 0;
-    width: 275px;
+    width: 200px;
     z-index: 10002;
   }
 
   #navPanel .link {
     display: block;
-    color: #aaa;
+    color: #4a4a4a;
     text-decoration: none;
     height: 44px;
     line-height: 44px;
@@ -1398,21 +1346,21 @@ li.active {
   }
 
   #navPanel .depth-0 {
-    color: #fff;
+    color: #000000;
   }
 
   body.navPanel-visible #page-wrapper {
-    -moz-transform: translateX(275px);
-    -webkit-transform: translateX(275px);
-    -ms-transform: translateX(275px);
-    transform: translateX(275px);
+    -moz-transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+    -ms-transform: translateX(200px);
+    transform: translateX(200px);
   }
 
   body.navPanel-visible #titleBar {
-    -moz-transform: translateX(275px);
-    -webkit-transform: translateX(275px);
-    -ms-transform: translateX(275px);
-    transform: translateX(275px);
+    -moz-transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+    -ms-transform: translateX(200px);
+    transform: translateX(200px);
   }
 
   body.navPanel-visible #navPanel {
