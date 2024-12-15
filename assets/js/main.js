@@ -7,7 +7,7 @@
 		breakpoints({
 			xlarge:  [ '1281px',  '1680px' ],
 			large:   [ '981px',   '1280px' ],
-			medium:  [ '737px',   '980px'  ],
+			medium:  [ '737px',   '1000px'  ],
 			small:   [ null,      '736px'  ]
 		});
 
@@ -33,7 +33,7 @@
 			$(
 				'<div id="titleBar">' +
 					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
+					'<span class="title">' + '</span>' +
 				'</div>'
 			)
 				.appendTo($body);
@@ -60,10 +60,20 @@
 
 })(jQuery);
 
-  const currentPath = window.location.pathname.split("/").pop();
-  const navLinks = document.querySelectorAll('#nav a');
-  navLinks.forEach(link => {	
-    if (link.getAttribute('href') === currentPath) {
-      link.parentElement.classList.add('active');
+
+const currentPath = window.location.pathname.split("/").pop();
+const navLinks = document.querySelectorAll('#nav a');
+
+navLinks.forEach(link => {
+  if (link.getAttribute('href') === currentPath) {
+    // Add 'active' class to the parent `<li>` of the link
+    link.parentElement.classList.add('active');
+
+    // Add 'active' class to all parent `<li>` elements for nested links
+    let parent = link.parentElement.parentElement.closest('li');
+    while (parent) {
+      parent.classList.add('active');
+      parent = parent.parentElement.closest('li');
     }
-  });
+  }
+});

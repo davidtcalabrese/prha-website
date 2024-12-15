@@ -354,7 +354,7 @@ table {
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1000px) {
   .container {
     width: 100%;
   }
@@ -842,8 +842,9 @@ ol.default li {
 }
 
 /* Active link styling */
-li.active {
-  background-color: #262626;
+/* nav > ul > li.active {
+  background-color: #444444;
+  max-height: 78px;
 }
 
 #nav > ul > li.active > a,
@@ -861,7 +862,42 @@ li.active {
 
 #nav > ul > li > ul {
   display: none;
+} */
+
+#nav > ul > li.active > ul,
+#nav > ul > li > ul > li.active > ul {
+  display: block; /* Ensure nested active menus are visible */
 }
+
+#nav ul li.active {
+  max-height: 78.8px;
+  background-color: #666666; 
+}
+
+#nav ul li.active > a {
+  color: #ffffff; /* Ensure text color contrasts with background */
+  font-weight: bold; /* Optional: make it more visually distinct */
+}
+
+/* Add padding to nested nav items */
+#nav ul li ul li {
+  padding-left: 20px; /* Indent nested items */
+  padding-top: 5px;  /* Add spacing above */
+  padding-bottom: 5px; /* Add spacing below */
+}
+
+#nav ul li ul li.active {
+  background-color: #666666; 
+}
+
+#nav ul li ul li.active::before {
+  background-color: #666666; 
+}
+
+#nav ul li ul {
+  padding-left: -10px;
+}
+
 
 /* Bottom Navigation */
 #bottom-nav {
@@ -1034,7 +1070,7 @@ li.active {
 /* Wrappers */
 #header-wrapper {
   background-color: #0093e9;
-  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background-image: linear-gradient(to right, #48aff3, #19a8ea);
 
   padding: 1rem 0;
 }
@@ -1087,7 +1123,9 @@ li.active {
 }
 
 #welcome-p {
+  margin: auto;
   text-align: left;
+  max-width: 800px;
 }
 
 #header .inner {
@@ -1123,6 +1161,19 @@ li.active {
 /* Footer */
 #footer-wrapper {
   padding: 1em 20px 3em 20px;
+}
+
+.document-list {
+  li {
+    margin: 10px 0;
+  }
+}
+
+.resource-icon {
+  margin-left: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 #footer {
@@ -1200,7 +1251,14 @@ li.active {
   display: none;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1080px) {
+  #logo {
+    display: none;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
   /* Basic */
   html,
   body {
@@ -1279,9 +1337,9 @@ li.active {
     top: 0;
     width: 60px;
     height: 44px;
-    opacity: 0.25;
+    opacity: 0.5;
   }
-
+  
   #titleBar .toggle:before {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -1293,9 +1351,6 @@ li.active {
     text-transform: none !important;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-  }
-
-  #titleBar .toggle:before {
     display: inline-block;
     text-decoration: none;
     font-size: 18px;
@@ -1303,12 +1358,12 @@ li.active {
     height: 44px;
     line-height: 44px;
     text-align: center;
-    color: #fff;
     content: "\f0c9";
+    color: #fff;
   }
 
   #titleBar .toggle:active {
-    opacity: 0.5;
+    opacity: 0.85;
   }
 
   #navPanel {
