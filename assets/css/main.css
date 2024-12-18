@@ -871,7 +871,7 @@ ol.default li {
 
 #nav ul li.active {
   max-height: 78.8px;
-  background-color: #666666; 
+  background-color: #363636;
 }
 
 #nav ul li.active > a {
@@ -887,11 +887,11 @@ ol.default li {
 }
 
 #nav ul li ul li.active {
-  background-color: #666666; 
+  background-color: #363636;
 }
 
 #nav ul li ul li.active::before {
-  background-color: #666666; 
+  background-color: #363636;
 }
 
 #nav ul li ul {
