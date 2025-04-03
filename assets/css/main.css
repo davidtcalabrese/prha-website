@@ -424,6 +424,12 @@ button,
   cursor: pointer;
 }
 
+#send-btn:hover {
+  background-color: #016ba8;
+}
+
+
+
 input[type="button"].icon:before,
 input[type="submit"].icon:before,
 input[type="reset"].icon:before,
@@ -803,6 +809,7 @@ ol.default li { padding-left: 0.25em; }
 
 /* Wrappers */
 #header-wrapper {
+  background-color: #f8f7f7;
   background-color: #f8f7f7;
   padding: 1rem 0;
 }
