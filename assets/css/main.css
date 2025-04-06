@@ -737,7 +737,7 @@ ol.default li { padding-left: 0.25em; }
 #banner {
   text-align: center;
   width: 940px;
-  margin: 0 auto;
+  margin: 0.5rem auto;
   overflow: hidden;
 }
 
@@ -749,7 +749,6 @@ ol.default li { padding-left: 0.25em; }
   font-size: 2.35em;
   font-weight: 700;
   line-height: 1.3em;
-  margin-bottom: 0;
 }
 
 #banner h2 strong {
@@ -802,6 +801,7 @@ ol.default li { padding-left: 0.25em; }
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1rem 0;
 }
 
 /* Sidebar */
@@ -810,11 +810,10 @@ ol.default li { padding-left: 0.25em; }
 /* Wrappers */
 #header-wrapper {
   background-color: #f8f7f7;
-  background-color: #f8f7f7;
   padding: 1rem 0;
 }
 
-#main-wrapper { background: #f8f7f7; }
+#main-wrapper { background: #ffffff; }
 
 #footer-wrapper {
   position: relative;
@@ -1257,12 +1256,18 @@ ol.default li { padding-left: 0.25em; }
 }
 
 .title-container {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 #prha-title {
   margin: 0;
 }
+
+#title {
+  margin-bottom: 2rem;
+}
+
