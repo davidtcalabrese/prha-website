@@ -16,76 +16,9 @@
 
         gtag('config', 'G-GBCRCVM0XP');
     </script>
-    <style>
-
-        /* Dim background when modal is active */
-        #meeting-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-        }
-
-        #meeting-modal p {
-            margin: 0.25rem;
-        }
-
-        /* Modal box */
-        #meeting-modal .modal-content {
-            background: #fff;
-            border-radius: 12px;
-            padding: 2em;
-            width: 90%;
-            max-width: 450px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-
-        #meeting-modal .modal-content h2 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        .close {
-            display: inline-block;
-            margin-top: 1.5em;
-            margin-bottom: 1rem;
-            background: #0066cc;
-            color: white;
-            text-decoration: none;
-            padding: 0.5em 1.2em;
-            border-radius: 8px;
-            width: 6rem;
-            cursor: pointer;
-        }
-
-        /* When modal is targeted, show it */
-        #meeting-modal:target {
-            display: flex;
-        }
-
-    </style>
 </head>
 
 <body class="homepage is-preload">
-<div id="meeting-modal">
-    <div class="modal-content">
-        <h2>Upcoming HOA Meeting</h2>
-        <p><strong>Date:</strong> October 29, 2025</p>
-        <p><strong>Time:</strong> 6:30 PM</p>
-        <p><strong>Location:</strong> City of Madison Police Department<br />1710 McKenna Blvd, Madison, WI 53711</p>
-        <a href="#" class="close" onclick="closeModal()">Got it</a>
-        <br />
-        <a href="news.html#meeting-2025">More Information</a>
-    </div>
-</div>
-
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -177,11 +110,6 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-    if(!window.location.hash) {
-        window.location.hash = '#meeting-modal';
-    }
-</script>
 </body>
 
 </html>
