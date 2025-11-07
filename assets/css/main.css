@@ -267,7 +267,9 @@ table { margin-bottom: 2em; }
   color: #696969;
   margin: 0 0 0.25em 0;
 }
-
+p, li {
+  color: black; !important;
+}
 #documents-container { min-height: 68vh; }
 
 /* Container */
